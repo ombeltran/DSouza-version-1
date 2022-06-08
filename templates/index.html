@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark">
+    <form method="post" action="base">
+      <input class="btn btn-light" type="submit" name="reinicio" value="Reinicio">
+    </form>
+    <h1 id="encabezado">Janeiro D'Souza Barber</h1>
+</nav>
+
+<div class="container" id="main">
+    <div class="item" id="principal" >
+      <h1 class="my_titulo">TURNO</h1>
+      
+      <form  method="post" action="index">
+          <input class="my_contador" type="text" name="my_output" value="{{contador}}" readonly>
+          <br>
+          <input type="submit" class="btn btn-warning" name="siguiente" value="Siguiente">
+      </form>
+    </div>
+
+    <div class="item" id="secundario">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" id="titulo_tabla">TURNO</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+            {% for item in lista %}
+                <tr>
+                    <td id="turno_tabla">{{item}}</td>
+                </tr>
+            {% endfor%}
+        </tbody>
+      </table>
+    </div>    
+</div>
+{% endblock %}
+
